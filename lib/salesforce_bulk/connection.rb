@@ -81,6 +81,11 @@ module SalesforceBulk
     end
 
     def parse_instance()
+      
+      if @server_url.include?('medassets.my.salesforce.com')
+        a.gsub "medassets.my.salesforce.com", "na13-chi.g.my.salesforce.com"
+      end
+      
       @server_url =~ /https:\/\/([a-z]{2,2}[0-9]{1,2})(-api)?/
       if $~.nil?
         # Check for a "My Domain" subdomain
