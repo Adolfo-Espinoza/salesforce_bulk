@@ -83,7 +83,7 @@ module SalesforceBulk
     def parse_instance()
       
       if @server_url.include?('medassets.my.salesforce.com')
-        a.gsub "medassets.my.salesforce.com", "na13-chi.g.my.salesforce.com"
+        @server_url.gsub "medassets.my.salesforce.com", "na13-chi.g.my.salesforce.com"
       end
       
       @server_url =~ /https:\/\/([a-z]{2,2}[0-9]{1,2})(-api)?/
